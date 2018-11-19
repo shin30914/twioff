@@ -1,0 +1,74 @@
+@import "bootstrap";
+
+body{
+  background-color: #e1e1e1;
+}
+
+p#user-name{
+  font-size: 20px;
+}
+
+#text {
+  background-color: #FFFFFF;
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+//タイトル画面の語のロゴ
+.box{
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+}
+.box #logo {
+  margin: 0;
+  padding: 0;
+  font-family: Hiragino Kaku Gothic Std;
+  font-size: 50px;
+}
+
+// サムネ画像
+.img-responsive-overwrite{
+  margin: 0 auto; //サムネを中央寄せ
+  border-radius:400px; // サムネを丸く
+}
+#thumbnail{
+  background-color: #FFFFFF;
+}
+
+
+//　Twitterで登録ボタン
+.fl_tw2{/*ボタンの背景*/
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 4px;/*角丸に*/
+  display: inline-block;
+  height: 40px;/*高さ*/
+  width: 230px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 15px;/*文字のサイズ*/
+  line-height: 40px;/*高さと合わせる*/
+  vertical-align: middle;/*垂直中央寄せ*/
+  background: #1da1f3;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.fl_tw2 .fa-twitter {
+  text-shadow: 1px 1px 0px #4287d6;
+  font-size: 15px;
+}
+
+.fl_tw2 span {/*テキスト*/
+  display:inline-block;
+  transition: .5s
+}
+
+@media screen and (max-width:600px){
+  div#smart-layout{
+    width: 345px;
+    margin: auto;
+  }
+}

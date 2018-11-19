@@ -1,0 +1,18 @@
+<div id="smart-layout" class="text-center">
+<div class="box">
+  <h1 id="logo">Twioff</h1>
+  <div>ついおふ！</div>
+</div>
+<div class="box">
+    <%= image_tag current_user.image.gsub("_normal", ""), size: 100, class: "img-responsive-overwrite"%>
+        <p id="user-name"><%=current_user.name%></p>
+        <p><%=current_user.nickname%></p>
+        <p><%=current_user.location%></p>
+  </div>
+
+<div class="box">
+  <p>TODO</p>
+</div>
+
+</div>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <span>ボタンどこに作ろっかな</span>

@@ -1,0 +1,7 @@
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to omniauth_authorize_path(resource_name, provider), method: :geto do %><br />
+      <div class="fl_tw2"><i class="fab fa-twitter"></i> <span>Twitterで登録 or ログイン!!</span></div>
+    <% end %>
+    <% end -%>
+<% end -%>
