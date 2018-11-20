@@ -1,0 +1,7 @@
+<p>会いたい人をタップして登録しよう！</p>
+<%- @friends.each do |friend| %>
+  <div class="user-card">
+    <%= image_tag friend.image.gsub("_normal", ""), size: 50, class: "img-responsive-overwrite", align: "middle" %>
+    <span><%= friend.name %></span>
+  </div>
+<% end %>

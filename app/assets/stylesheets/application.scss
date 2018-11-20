@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 body{
-  background-color: #e1e1e1;
+  background-color: #d1dce1;
 }
 
 p#user-name{
@@ -64,6 +64,14 @@ p#user-name{
 .fl_tw2 span {/*テキスト*/
   display:inline-block;
   transition: .5s
+}
+
+.user-card{
+  padding: 0.5em 1em;
+  margin: 5px;
+  background: white;
+  border-radius: 4px;
+
 }
 
 @media screen and (max-width:600px){

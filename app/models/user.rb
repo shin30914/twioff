@@ -2,6 +2,30 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  has_many :active_relationships, class_name:  "Relationship",
+           foreign_key: "follower_id",
+           dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+           foreign_key: "followed_id",
+           dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  # ユーザーをフォローする
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # ユーザーをアンフォローする
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # 現在のユーザーがフォローしてたらtrueを返す
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
@@ -14,7 +38,9 @@ class User < ApplicationRecord
           image: auth.info.image,
           name: auth.info.name,
           nickname: auth.info.nickname,
-          location: auth.info.location
+          location: auth.info.location,
+          token: auth.credentials.token,
+          secret: auth.credentials.secret,
       )
     end
     user
