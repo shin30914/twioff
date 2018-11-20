@@ -1,7 +1,23 @@
 <p>会いたい人をタップして登録しよう！</p>
 <%- @friends.each do |friend| %>
+
   <div class="user-card">
     <%= image_tag friend.image.gsub("_normal", ""), size: 50, class: "img-responsive-overwrite", align: "middle" %>
     <span><%= friend.name %></span>
+
+    <%- if !current_user.following?(friend) %>
+
+      <%= form_for(current_user.active_relationships.build(followed_id: friend.id)) do |f| %>
+        <div><%= f.hidden_field :followed_id %></div>
+        <%= f.submit "会いたい！", class: "btn btn-large btn-primary follow-btn" %>
+      <% end %>
+
+    <%- else %>
+
+      <%= form_for(current_user.active_relationships.find_by(followed_id: friend.id), html: { method: :delete }) do |f| %>
+        <%= f.submit "やっぱ会いたくない！", class: "btn" %>
+      <% end %>
+
+    <% end %>
   </div>
 <% end %>
