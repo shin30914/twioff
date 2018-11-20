@@ -26,6 +26,11 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  # マッチしたユーザーの配列を返す
+  def matchers
+    following & followers
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
