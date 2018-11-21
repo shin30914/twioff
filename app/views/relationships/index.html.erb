@@ -1,0 +1,16 @@
+<div class="box text-center">
+  <div class="box-contents">
+    <h5>マッチリスト<i class="fa fa-heart" style="color: rgba(255,139,137,0.98);"></i></h5>
+    <p></p>
+  </div>
+</div>
+<%- @match_users.each do |user| %>
+  <div class="box">
+    <div class="box-contents" style="display: flex">
+      <div class="friend-box">
+        <%= image_tag user.image.gsub("_normal", ""), size: 50, class: "img-responsive-overwrite", align: "middle" %>
+        <span><%= user.name %></span>
+      </div>
+    </div>
+  </div>
+<% end %>

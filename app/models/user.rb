@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   # マッチしたユーザーの配列を返す
-  def matchers
+  def match_users
     following & followers
   end
 

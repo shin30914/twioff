@@ -46,10 +46,15 @@ footer{
     .friend-box{
       width: 300px;
     }
+    h5{
+      font-size: 25px;
+      margin: 10px;
+    }
   }
 }
-
+// 登録ボタン
 .square_btn {
+  white-space: nowrap;
   margin-top: 4px;
   display: inline-block;
   padding: 0.3em 1em;
@@ -59,6 +64,19 @@ footer{
   border-radius: 3px;
   transition: .4s;
   background-color: #FFFFFF;
+}
+// 登録済ボタン
+.square_disable_btn {
+  white-space: nowrap;
+  margin-top: 4px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: rgba(103, 197, 255, 0.5);
+  border: solid 2px rgba(103, 197, 255, 0.51);
+  border-radius: 3px;
+  transition: .4s;
+  background-color: #f0f0f0;
 }
 
 // サムネ画像

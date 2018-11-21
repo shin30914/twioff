@@ -1,6 +1,6 @@
 <div class="box">
-  <div class="box-contents">
-<h5>会いたい人をタップして登録しよう！</h5>
+  <div class="box-contents text-center">
+    <h5>会いたい人を登録 <i class="fas fa-user-plus" style="color: rgba(149,179,255,0.98);"></i></h5>
   </div>
 </div>
 <%- @friends.each do |friend| %>
@@ -15,12 +15,11 @@
       <%- if !current_user.following?(friend) %>
         <%= form_for(current_user.active_relationships.build(followed_id: friend.id)) do |f| %>
           <div><%= f.hidden_field :followed_id %></div>
-          <%= f.submit "会いたい", data: { confirm: "取り消せませんがよろしいですか？"}, class: "square_btn" %>
+          <%= f.submit "会いたい", data: { confirm: "取り消せませんがよろしいですか？"}, class: "square_btn " %>
         <% end %>
 
       <%- else %>
-
-        <p>登録済み</p>
+        <button disabled class="square_disable_btn">登録済</button>
       <% end %>
     </div>
   </div>
