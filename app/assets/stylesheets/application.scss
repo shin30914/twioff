@@ -1,41 +1,70 @@
 @import "bootstrap";
 
+a:link {color: #000000}
+
+header{
+  text-align: center;
+  background-color: white;
+  h1{
+    padding: 7px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    span{
+      font-size: 12px;
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    }
+  }
+}
+
 body{
-  background-color: #ffebf8;
+  background-color: rgba(245, 245, 245, 0.99);
 }
 
-p#user-name{
-  font-size: 20px;
-}
-
-#text {
+footer{
   background-color: #FFFFFF;
-  padding: 10px;
-  font-size: 15px;
-  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 0;
+  position: fixed;
+  #footer-contents{
+    font-size: 25px;
+  }
 }
-//タイトル画面の語のロゴ
+
 .box{
-  padding: 0.5em 1em;
-  margin: 1em 0;
+  padding: 0;
+  margin: 5px;
   color: #5d627b;
   background: white;
-  border-top: solid 5px #5d627b;
+  .box-contents{
+    padding: 10px;
+    li{
+      text-align: left;
+      font-size: 15px;
+    }
+    .friend-box{
+      width: 300px;
+    }
+  }
 }
-.box #logo {
-  margin: 0;
-  padding: 0;
-  font-family: Hiragino Kaku Gothic Std;
-  font-size: 50px;
+
+.square_btn {
+  margin-top: 4px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  background-color: #FFFFFF;
 }
 
 // サムネ画像
 .img-responsive-overwrite{
   margin: 0 auto; //サムネを中央寄せ
   border-radius:400px; // サムネを丸く
-}
-#thumbnail{
-  background-color: #FFFFFF;
 }
 
 
@@ -64,14 +93,6 @@ p#user-name{
 .fl_tw2 span {/*テキスト*/
   display:inline-block;
   transition: .5s
-}
-
-.user-card{
-  padding: 0.5em 1em;
-  margin: 5px;
-  background: white;
-  border-radius: 4px;
-
 }
 //
 //@media screen and (max-width:600px){

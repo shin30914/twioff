@@ -1,7 +1,19 @@
-<div id="smart-layout" class="text-center">
+<div class="text-center">
+  <div class="box">
   <%= image_tag "cafe.jpg", width: "100%" %>
-  <p id="text">使い方</p>
-  <p>会ってみたいツイッターのフォローしている人を選択すると、向こうも同じように会いたいと思っていたらマッチします。</p>
+  </div>
+  <div class="box">
+    <div class="box-contents">
+      <h5>使い方</h5>
+      <ol>
+        <li>会いたい人を登録します。<br>(この時点で会いたいかどうかは誰にも見えません)</li>
+        <li>向こうもこちらを登録したら、</li>
+        <li>両想いだったことがお互い分かるようになります！</li>
+        <li>Happy set</li>
+      </ol>
+    </div>
+  </div>
+
 
 <%= render "users/shared/twitter" %>
 </div>
