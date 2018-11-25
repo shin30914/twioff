@@ -1,12 +1,13 @@
-<div id="smart-layout" class="text-center">
+<div class="text-center">
   <div class="box">
     <div class="box-contents">
       <%= image_tag current_user.image.gsub("_normal", ""), size: 100, class: "img-responsive-overwrite" %>
-      <p><%= current_user.name %></p>
+      <h5><%= current_user.name %></h5>
       <p><%= current_user.nickname %></p>
       <p><%= current_user.location %></p>
     </div>
   </div>
+  <%= render "shared/how_to_use" %>
 
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <span>ボタンどこに作ろっかな</span>
 </div>

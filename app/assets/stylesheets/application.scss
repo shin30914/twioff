@@ -20,6 +20,11 @@ body{
   background-color: rgba(245, 245, 245, 0.99);
 }
 
+.container{
+  max-width: 600px;
+  padding: 0;
+}
+
 footer{
   background-color: #FFFFFF;
   width: 100%;
@@ -44,10 +49,13 @@ footer{
       font-size: 15px;
     }
     .friend-box{
-      width: 300px;
+      width: 700px;
     }
     h5{
       font-size: 25px;
+      margin: 10px;
+    }
+    p{
       margin: 10px;
     }
   }
