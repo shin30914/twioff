@@ -1,8 +1,10 @@
 @import "bootstrap";
 
 a:link {color: #000000}
+a:visited {color: #000000;}
 
 header{
+  text-decoration: none;
   text-align: center;
   background-color: white;
   h1{
@@ -22,7 +24,7 @@ body{
 
 .container{
   max-width: 600px;
-  padding: 0;
+  padding: 0px 0px 30px;
 }
 
 footer{
@@ -35,6 +37,10 @@ footer{
   #footer-contents{
     font-size: 25px;
   }
+}
+
+.sox{
+  font-size: 13px;
 }
 
 .box{
