@@ -3,7 +3,7 @@
     <div class="box-contents">
       <%= image_tag current_user.image.gsub("_normal", ""), size: 100, class: "img-responsive-overwrite" %>
       <h5><%= current_user.name %></h5>
-      <p><%= current_user.nickname %></p>
+      <p>@<%= current_user.nickname %></p>
       <p><%= current_user.location %></p>
     </div>
   </div>

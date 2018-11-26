@@ -34,8 +34,16 @@ footer{
   justify-content: space-evenly;
   bottom: 0;
   position: fixed;
-  #footer-contents{
-    font-size: 25px;
+
+  .footer-contents{
+    margin: 2px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 700px;
+    #footer-content{
+      font-size: 25px;
+    }
   }
 }
 
