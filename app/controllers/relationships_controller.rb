@@ -10,7 +10,7 @@ class RelationshipsController < ApplicationController
     friends.each do |friend|
       @friends << User.find_by(uid: friend)
     end
-    @friends.compact! # 何故だかArrayにnilが含まれることがあるので消す
+    @friends.compact! # Arrayに含まれるnilを削除
   end
 
   def create
