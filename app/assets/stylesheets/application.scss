@@ -24,10 +24,11 @@ body{
 
 .container{
   max-width: 600px;
-  padding: 0px 0px 30px;
+  padding: 0px 0px 50px;
 }
 
 footer{
+  border-top: solid 5px #F5F5F5;
   background-color: #FFFFFF;
   width: 100%;
   display: flex;
@@ -136,10 +137,3 @@ footer{
   display:inline-block;
   transition: .5s
 }
-//
-//@media screen and (max-width:600px){
-//  div#smart-layout{
-//    width: 345px;
-//    margin: auto;
-//  }
-//}

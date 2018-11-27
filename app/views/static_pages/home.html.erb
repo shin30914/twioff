@@ -8,10 +8,11 @@
     </div>
   </div>
   <%= render "shared/how_to_use" %>
-
-  <div class="sox">
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <%= link_to "利用規約", static_pages_terms_of_use_path %>
-  <%= link_to "プライバシーポリシー", static_pages_privacy_policy_path %>
+  <div class="box">
+    <div class="box-contents">
+      <p>フォロワーにシェアする</p>
+      <%= render "shared/twitter_share_button" %>
+    </div>
   </div>
+
 </div>

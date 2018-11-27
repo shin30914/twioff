@@ -1,9 +1,18 @@
 <div class="box text-center">
   <div class="box-contents">
     <h5>マッチリスト<i class="fa fa-heart" style="color: rgba(255,139,137,0.98);"></i></h5>
-    <p></p>
   </div>
 </div>
+<%- if @match_users.blank? %>
+  <div class="box text-center">
+    <div class="box-contents">
+      <p>まだマッチしている人が居ません。</p>
+      <p>見つかるようにシェアしよう！</p>
+      <%= render "shared/twitter_share_button" %>
+    </div>
+  </div>
+<%- end %>
+
 <%- @match_users.each do |user| %>
   <div class="box">
     <div class="box-contents" style="display: flex">
