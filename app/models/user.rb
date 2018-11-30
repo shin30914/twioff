@@ -31,6 +31,11 @@ class User < ApplicationRecord
     following & followers
   end
 
+  # 自分のことを気になっている人の数を返す
+  def number_of_followers
+    followers.count
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

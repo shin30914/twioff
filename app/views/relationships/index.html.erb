@@ -12,6 +12,13 @@
     </div>
   </div>
 <%- end %>
+<%- if @number_of_followers - @match_users.count != 0 %>
+  <div class="box text-center">
+    <div class="box-contents">
+      <p>あなたの事を気になっているユーザーは<br>現在 <%= @number_of_followers - @match_users.count %> 名います。</p>
+    </div>
+  </div>
+<%- end %>
 
 <%- @match_users.each do |user| %>
   <div class="box">

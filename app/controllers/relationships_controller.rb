@@ -26,5 +26,6 @@ class RelationshipsController < ApplicationController
 
   def index
     @match_users = current_user.match_users
+    @number_of_followers = current_user.number_of_followers
   end
 end

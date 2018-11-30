@@ -20,9 +20,13 @@
           <div><%= f.hidden_field :followed_id %></div>
           <%= f.submit "キニナル", data: { confirm: "#{friend.name}さんを登録します"}, class: "square_btn " %>
         <% end %>
-
-      <%- else %>
+      <%- elsif friend.following?(current_user) %>
         <button disabled class="square_disable_btn">登録済</button>
+      <%- else %>
+        <%= form_for(current_user.active_relationships.find_by(followed_id: friend.id),
+                     html: { method: :delete }) do |f| %>
+          <%= f.submit "解除", class: "square_btn" %>
+        <% end %>
       <% end %>
     </div>
   </div>
