@@ -24,6 +24,9 @@ class RelationshipsController < ApplicationController
   def create
     user = User.find(params[:relationship][:followed_id])
     current_user.follow(user)
+    if user.following?(current_user)
+      flash[:alert] = "おめでとうございます！マッチしました！"
+    end
     redirect_to root_path
   end
 
