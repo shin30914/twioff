@@ -20,6 +20,40 @@ header{
   }
 }
 
+.notice-box{
+  padding: 0;
+  margin: 5px;
+  background: #e8ffec;
+  border: solid 1.5px #c6f5c2;
+  border-radius: 6px;
+  .box-contents{
+    padding: 5px;
+    color: #00b911;
+    p{
+      font-size: 13px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.alert-box{
+  padding: 0;
+  margin: 5px;
+  background: #ffdde9;
+  border: solid 1.5px #f5abb7;
+  border-radius: 6px;
+  .box-contents{
+    padding: 5px;
+    color: #ff6b72;
+    p{
+      font-size: 13px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
 body{
   background-color: rgba(245, 245, 245, 0.99);
 }
@@ -78,7 +112,6 @@ footer{
     }
   }
 }
-
 
 // 登録ボタン
 .square_btn {

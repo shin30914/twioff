@@ -4,13 +4,21 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.new
 
     client = login_twitter(current_user)
-
-    friends  = client.friend_ids.attrs[:ids]
-    @friends = []
-    friends.each do |friend|
-      @friends << User.find_by(uid: friend)
+# TwitterTooManyRequestの例外処理なのだがより良いものに書き直す
+# Todo
+    begin
+      friends  = client.friend_ids.attrs[:ids]
+      @friends = []
+      friends.each do |friend|
+        @friends << User.find_by(uid: friend)
+      end
+      @friends.compact! # Arrayに含まれるnilを削除
+    rescue
+      flash[:notice] = "新規登録画面ご利用は15分ほどお待ちください。"
+      redirect_to root_path
     end
-    @friends.compact! # Arrayに含まれるnilを削除
+
+
   end
 
   def create
