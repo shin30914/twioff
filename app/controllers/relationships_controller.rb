@@ -14,7 +14,7 @@ class RelationshipsController < ApplicationController
       end
       @friends.compact! # Arrayに含まれるnilを削除
     rescue
-      flash[:notice] = "新規登録画面ご利用は15分ほどお待ちください。"
+      flash[:notice] = "新規登録画面のご利用は15分ほどお待ちください。"
       redirect_to root_path
     end
 
