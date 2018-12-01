@@ -25,7 +25,7 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:relationship][:followed_id])
     current_user.follow(user)
     if user.following?(current_user)
-      flash[:alert] = "おめでとうございます！マッチしました！"
+      flash[:alert] = "おめでとうございます！マッチしました！連絡を取ってみてね！"
     end
     redirect_to root_path
   end
