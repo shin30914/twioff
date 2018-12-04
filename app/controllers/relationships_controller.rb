@@ -4,8 +4,8 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.new
 
     client = login_twitter(current_user)
-# TwitterTooManyRequestの例外処理なのだがより良いものに書き直す
 # Todo
+# TwitterTooManyRequestの例外処理なのだが他の例外が起きた場合このままだと分からないのでエラーをログに残したい
     begin
       friends  = client.friend_ids.attrs[:ids]
       @friends = []
@@ -17,7 +17,6 @@ class RelationshipsController < ApplicationController
       flash[:notice] = "新規登録画面のご利用は15分ほどお待ちください。"
       redirect_to root_path
     end
-
 
   end
 
