@@ -26,7 +26,7 @@ feature "OmniAuth interface" do
         click_link(submit)
       end
       it "ログイン成功の文字が表示される" do
-        expect(page).to have_content('Successfully authenticated from Twitter account.')
+        expect(page).to have_content('Twitter から承認されました。')
       end
       context "ログアウトボタンを押す" do
         before { click_link(logout) }
@@ -34,7 +34,7 @@ feature "OmniAuth interface" do
           expect(page).to have_content('Twitterで登録')
         end
         it "ログアウト成功の文字が表示される" do
-          expect(page).to have_content('Signed out successfully.')
+          expect(page).to have_content('ログアウトしました。')
         end
       end
     end
