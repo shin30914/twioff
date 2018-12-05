@@ -8,7 +8,7 @@
 </div>
 <%- @friends.each do |friend| %>
   <%- unless current_user.following?(friend) && friend.following?(current_user) %>
-    <div class="box">
+    <div class="box" id="<%= escape_javascript(friend.name) %>">
       <div class="box-contents" style="display: flex">
         <div class="friend-box">
           <%= image_tag friend.image.gsub("_normal", ""), size: 50, class: "img-responsive-overwrite", align: "middle" %>

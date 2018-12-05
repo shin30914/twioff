@@ -23,12 +23,12 @@ class RelationshipsController < ApplicationController
   def create
     @user = User.find(params[:relationship][:followed_id])
     current_user.follow(@user)
-    if @user.following?(current_user)
-      flash[:alert] = "おめでとうございます！マッチしました！連絡を取ってみてね！"
-    end
     respond_to do |format|
-      format.html { redirect_to new_relationship_path }
-      format.js
+      if @user.following?(current_user)
+        flash[:alert] = "おめでとうございます！マッチしました！連絡を取ってみてね！"
+        format.js { render "match.js.erb" }
+      end
+      format.js { render "create.js.erb" }
     end
   end
 
@@ -36,8 +36,7 @@ class RelationshipsController < ApplicationController
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow(@user)
     respond_to do |format|
-      format.html { redirect_to new_relationship_path }
-      format.js
+      format.js { render "destroy.js.erb" }
     end
   end
 
