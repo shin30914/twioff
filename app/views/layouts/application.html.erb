@@ -11,9 +11,6 @@
 <%= yield %>
     <%= render "shared/sox" %>
   </div>
-<%- if user_signed_in? %>
-  <%= render "layouts/footer" %>
-<%- end %>
-
+  <%= render "layouts/footer" if user_signed_in? %>
 </body>
 </html>
