@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'home#root'
   get 'static_pages/privacy_policy'
   get 'static_pages/terms_of_use'
   get 'static_pages/inquiry'
-  root to: "static_pages#home"
   # get "relationships/new"
   # get "relationships/index"
   devise_for :users, controllers: {
