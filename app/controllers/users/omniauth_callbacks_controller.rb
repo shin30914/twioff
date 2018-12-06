@@ -2,6 +2,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def twitter
     callback_from :twitter
+    twitter_client = login_twitter(current_user)
+    twitter_client.update("Twioffに登録しました！ https://www.twioff.tokyo #twioff @twioff_officialさんから")
   end
 
   private
