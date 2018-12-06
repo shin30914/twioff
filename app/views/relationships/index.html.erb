@@ -27,6 +27,11 @@
         <%= image_tag user.image.gsub("_normal", ""), size: 50, class: "img-responsive-overwrite", align: "middle" %>
         <span><%= user.name %></span>
       </div>
+    <div>
+      <button class="square_btn">
+        <a href="https://twitter.com/<%= user.nickname %>" style="color: #67c5ff;">DMを送る</a>
+      </button>
+    </div>
     </div>
   </div>
 <% end %>
