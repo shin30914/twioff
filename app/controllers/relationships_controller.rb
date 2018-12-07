@@ -8,16 +8,20 @@ class RelationshipsController < ApplicationController
 # TwitterTooManyRequestの例外処理なのだが他の例外が起きた場合このままだと分からないのでエラーをログに残したい
     begin
       friends  = client.friend_ids.attrs[:ids]
-      @friends = []
+      followers = client.follower_ids.attrs[:ids]
+      @ff = []
       friends.each do |friend|
-        @friends << User.find_by(uid: friend)
+        @ff << User.find_by(uid: friend)
       end
-      @friends.compact! # Arrayに含まれるnilを削除
+      followers.each do |follower|
+        @ff << User.find_by(uid: follower)
+      end
+      @ff.uniq!
+      @ff.compact! # Arrayに含まれるnilを削除
     rescue
       flash[:notice] = "新規登録画面のご利用は15分ほどお待ちください。"
       redirect_to root_path
     end
-
   end
 
   def create

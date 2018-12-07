@@ -6,7 +6,7 @@
     <%= render "shared/twitter_share_button" %>
   </div>
 </div>
-<%- @friends.each do |friend| %>
+<%- @ff.each do |friend| %>
   <%- unless current_user.following?(friend) && friend.following?(current_user) %>
     <div class="box" id="<%= escape_javascript(friend.name) %>">
       <div class="box-contents" style="display: flex">
