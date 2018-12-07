@@ -28,9 +28,7 @@
         <span><%= user.name %></span>
       </div>
     <div>
-      <button class="square_btn">
-        <a href="https://twitter.com/<%= user.nickname %>" style="color: #67c5ff;">DMを送る</a>
-      </button>
+      <input type="button" class="square_btn" onclick="location.href='https://twitter.com/<%= user.nickname %>'"value="DMを送る">
     </div>
     </div>
   </div>
