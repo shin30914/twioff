@@ -9,20 +9,20 @@ class RelationshipsController < ApplicationController
     begin
       friends  = client.friend_ids.attrs[:ids]
       followers = client.follower_ids.attrs[:ids]
+      ffs = friends + followers
+      ffs.uniq!
       @ff = []
-      friends.each do |friend|
-        @ff << User.find_by(uid: friend)
-      end
-      followers.each do |follower|
-        @ff << User.find_by(uid: follower)
-      end
-      @ff.uniq!
+      ffs.each do |ff|
+        @ff << User.find_by(uid: ff)
+        end
       @ff.compact! # Arrayに含まれるnilを削除
     rescue
       flash[:notice] = "新規登録画面のご利用は15分ほどお待ちください。"
       redirect_to root_path
     end
   end
+
+
 
   def create
     @user = User.find(params[:relationship][:followed_id])
