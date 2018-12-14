@@ -1,3 +1,7 @@
 # README
 
-頑張って作ってるから待ってろ！
+URL
+http://www.twioff.tokyo
+
+
+This software is released under the MIT License, see LICENSE.txt.
