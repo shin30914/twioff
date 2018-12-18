@@ -68,3 +68,6 @@ gem 'dotenv-rails'
 gem 'bootstrap'
 gem 'twitter'
 gem 'jquery-rails'
+
+gem 'webpacker'
+gem 'react-rails'
