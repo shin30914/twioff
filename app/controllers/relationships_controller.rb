@@ -26,13 +26,15 @@ class RelationshipsController < ApplicationController
 
   def create
     @user = User.find(params[:relationship][:followed_id])
-    current_user.follow(@user)
+    # current_user.follow(@user)
+    @relationship = current_user.follow(@user)
     respond_to do |format|
       if @user.following?(current_user)
-        flash[:alert] = "おめでとうございます！マッチしました！連絡を取ってみてね！"
         format.js { render "match.js.erb" }
+        format.json { render json: { relationships: @relationship, isMatch: true }}
       end
       format.js { render "create.js.erb" }
+      format.json { render json: { relationships:  @relationship, isMatch: false }}
     end
   end
 
@@ -41,6 +43,7 @@ class RelationshipsController < ApplicationController
     current_user.unfollow(@user)
     respond_to do |format|
       format.js { render "destroy.js.erb" }
+      format.json { render json: nil }
     end
   end
 

@@ -15,11 +15,15 @@
           <span><%= friend.name %></span>
         </div>
         <div id="follow_form<%= friend.name %>">
-          <%- if !current_user.following?(friend) %>
-            <%= render "relationships/follow", friend: friend %>
-          <%- else %>
-            <%= render "relationships/unfollow", friend: friend %>
-          <% end %>
+
+          <%= react_component("follow_button",
+                              user: friend.attributes,
+                              relationship: current_user.active_relationships.find_by(followed_id: friend.id)&.attributes)%>
+          <%#- if !current_user.following?(friend) %>
+            <%#= render "relationships/follow", friend: friend %>
+          <%#- else %>
+            <%#= render "relationships/unfollow", friend: friend %>
+          <%# end %>
         </div>
       </div>
     </div>

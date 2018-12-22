@@ -1,19 +1,17 @@
 <div class="text-center">
   <div class="box">
     <div class="box-contents">
-      <%= image_tag current_user.image.gsub("_normal", ""), size: 100, class: "img-responsive-overwrite" %>
-      <h5><%= @user.name %></h5>
-      <p>@<%= @user.nickname %></p>
-      <p><%= @user.location %></p>
-    </div>
+  <%= image_tag current_user.image.gsub("_normal", ""), size: 100, class: "img-responsive-overwrite" %>
+  <h5><%= @user.name %></h5>
+  <p>@<%= @user.nickname %></p>
+  <p><%= @user.location %></p>
+</div>
+</div>
+<%= render "shared/how_to_use" %>
+<div class="box">
+  <div class="box-contents">
+    <p>アプリをシェアする</p>
+    <%= render "shared/twitter_share_button" %>
   </div>
-  <%= render "shared/how_to_use" %>
-  <div class="box">
-    <div class="box-contents">
-      <p>アプリをシェアする</p>
-      <%= render "shared/twitter_share_button" %>
-    </div>
-  </div>
-  <%= react_component("hello_react", name: "React") %>
-
+</div>
 </div>
