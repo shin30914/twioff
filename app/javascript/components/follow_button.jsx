@@ -26,7 +26,6 @@ export default class FollowButton extends Component {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       }
     }).then((response) => {
-      console.log(response)
       const relationship = response.relationships
       const isMatch = response.isMatch
       this.setState({
