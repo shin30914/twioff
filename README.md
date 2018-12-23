@@ -22,7 +22,7 @@ Twitterのフォローしている人またはフォローされている人で�
 
 ## アプリケーションの設計等
 
-- [SQLのテーブル情報](https://docs.google.com/spreadsheets/d/1SnqBLW3j6g42VCw2Wj8Xrs46TG7scQD0lQGD0vpYV9E/edit?usp=sharing)
+- [DBテーブル定義表](https://docs.google.com/spreadsheets/d/1SnqBLW3j6g42VCw2Wj8Xrs46TG7scQD0lQGD0vpYV9E/edit?usp=sharing)
 - [画面遷移図](https://github.com/shin30914/twioff/blob/master/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
 
 
