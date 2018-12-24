@@ -26,6 +26,23 @@ Twitterのフォローしている人またはフォローされている人で�
 - [画面遷移図](https://github.com/shin30914/twioff/blob/master/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
 - [ER図](https://drive.google.com/file/d/1KeMqB7tj0YLoHBJaZsQ48l74G1l_kRVT/view?usp=sharing)
 
+## RailsやRuby標準以外の利用サードパーティライブラリ
+####ログイン認証機能
+- devise
+- omniauth
+- omniauth-twitter
+####環境別キー管理
+- dotenv-rails
+####CSSフレームワーク
+- bootstrap
+####ツイッターAPI操作
+- twitter
+####JavaScriptフレームワーク
+- jquery-rails
+- webpacker
+- react-rails
+
+
 ## アプリケーションのURL
 [Twioff Ver.β](https://www.twioff.tokyo)
 
