@@ -1,4 +1,0 @@
-<%= form_for(current_user.active_relationships.build(followed_id: friend.id), remote: true) do |f| %>
-  <div><%= f.hidden_field :followed_id %></div>
-  <%= f.submit "会いたい", data: { confirm: "#{friend.name}さんに会いたいですか？(※マッチした場合は取り消せません)"}, class: "square_btn create" %>
-<% end %>
