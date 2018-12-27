@@ -11,29 +11,24 @@ class RelationshipsController < ApplicationController
       followers = client.follower_ids.attrs[:ids]
       ffs = friends + followers
       ffs.uniq!
-      @ff = []
+      @ffs = []
       ffs.each do |ff|
-        @ff << User.find_by(uid: ff)
+        @ffs << User.find_by(uid: ff)
         end
-      @ff.compact! # Arrayに含まれるnilを削除
+      @ffs.compact! # Arrayに含まれるnilを削除
     rescue
       flash[:notice] = "新規登録画面のご利用は15分ほどお待ちください。"
       redirect_to root_path
     end
   end
 
-
-
   def create
     @user = User.find(params[:relationship][:followed_id])
-    # current_user.follow(@user)
     @relationship = current_user.follow(@user)
     respond_to do |format|
       if @user.following?(current_user)
-        format.js { render "match.js.erb" }
         format.json { render json: { relationships: @relationship, isMatch: true }}
       end
-      format.js { render "create.js.erb" }
       format.json { render json: { relationships:  @relationship, isMatch: false }}
     end
   end
@@ -42,7 +37,6 @@ class RelationshipsController < ApplicationController
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow(@user)
     respond_to do |format|
-      format.js { render "destroy.js.erb" }
       format.json { render json: nil }
     end
   end

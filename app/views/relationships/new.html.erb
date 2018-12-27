@@ -6,7 +6,7 @@
     <%= render "shared/twitter_share_button" %>
   </div>
 </div>
-<%- @ff.each do |friend| %>
+<%- @ffs.each do |friend| %>
   <%- unless current_user.following?(friend) && friend.following?(current_user) %>
     <div class="box" id="<%= escape_javascript(friend.name) %>">
       <div class="box-contents" style="display: flex">
@@ -19,11 +19,6 @@
           <%= react_component("follow_button",
                               user: friend.attributes,
                               relationship: current_user.active_relationships.find_by(followed_id: friend.id)&.attributes)%>
-          <%#- if !current_user.following?(friend) %>
-            <%#= render "relationships/follow", friend: friend %>
-          <%#- else %>
-            <%#= render "relationships/unfollow", friend: friend %>
-          <%# end %>
         </div>
       </div>
     </div>
